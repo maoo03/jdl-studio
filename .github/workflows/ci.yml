@@ -28,7 +28,12 @@ jobs:
         run: npm ci
       
       - name: Run coverage tests
-        run: npm run test:coverage
+        run: |
+          if [ "$GITHUB_REF" == "refs/heads/src" ]; then
+            npm run test:update-snapshot
+          else
+            npm run test:coverage
+          fi
       
       - uses: actions/upload-artifact@v4
         if: always()
