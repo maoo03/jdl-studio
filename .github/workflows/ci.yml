@@ -9,7 +9,7 @@ on:
     branches: [ src ]
 
 env:
-  NODE_VERSION: 16 # Match your project's Node.js requirement
+  NODE_VERSION: 18 # Match your project's Node.js requirement
   CI: true
 
 jobs:
@@ -23,7 +23,7 @@ jobs:
           node-version: ${{ env.NODE_VERSION }}
           cache: 'npm'
       - name: Install dependencies
-        run: npm ci
+        run: npm ci --include=dev
       - uses: actions/upload-artifact@v4
         with:
           name: node_modules
