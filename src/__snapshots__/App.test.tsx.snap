@@ -76,7 +76,7 @@ exports[`renders default snapshot 1`] = `
               <img
                 alt="JHipster logo"
                 class="jhi-logo"
-                src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+CjxzdmcKICAgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIgogICB3aWR0aD0iNDEuNjUwNTgxbW0iCiAgIGhlaWdodD0iMjIuNzM3MTQzbW0iCiAgIHZpZXdCb3g9IjAgMCA0MS42NTA1ODEgMjIuNzM3MTQ0Ij4KICA8ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSg5MS4xMjg4NjEsLTMxLjYzMTQyOCkiPgogICAgPGcgdHJhbnNmb3JtPSJtYXRyaXgoMC4yNjQ1ODMzMywwLDAsMC4yNjQ1ODMzMywtODYuMTI4NjUzLDMxLjg0OTM4KSI+CiAgICAgIDxwYXRoCiAgICAgICAgIHN0eWxlPSJmaWxsOiMzNDc0YWIiCiAgICAgICAgIGQ9Ik0gNjkuODgsMzguMTggQyA2OS44OCwzOC4xOCAxMC41MywzLjc0IDUuNCwyNS4xNiAwLjI3LDQ2LjU4IC01LjUsNjIuODYgMTAuMzEsNjUuODcgMjYuMTIsNjguODggNjkuODgsMzguMTggNjkuODgsMzguMTggWiIvPgogICAgICA8cGF0aAogICAgICAgICBzdHlsZT0iZmlsbDojNDI4OWM3IgogICAgICAgICBkPSJtIDU5LjYyLDMzIGMgMTcsLTguOCA1MC42OCwtMjMuODggNTQuNTMsLTcuOTEgNS4xOCwyMS40OSAxMSwzNy44NCAtNC43OSw0MC45MSAtMTEuMDgsMi4xNSAtMzYsLTEyLjM4IC00OS44MiwtMjEuMiAtMC4wMiwtMTAuNDQgMC4xLC0xLjUxIDAuMDgsLTExLjggeiIvPgogICAgPC9nPgogIDwvZz4KPC9zdmc+Cgo="
+                src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+DQo8c3ZnDQogICB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciDQogICB3aWR0aD0iNDEuNjUwNTgxbW0iDQogICBoZWlnaHQ9IjIyLjczNzE0M21tIg0KICAgdmlld0JveD0iMCAwIDQxLjY1MDU4MSAyMi43MzcxNDQiPg0KICA8ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSg5MS4xMjg4NjEsLTMxLjYzMTQyOCkiPg0KICAgIDxnIHRyYW5zZm9ybT0ibWF0cml4KDAuMjY0NTgzMzMsMCwwLDAuMjY0NTgzMzMsLTg2LjEyODY1MywzMS44NDkzOCkiPg0KICAgICAgPHBhdGgNCiAgICAgICAgIHN0eWxlPSJmaWxsOiMzNDc0YWIiDQogICAgICAgICBkPSJNIDY5Ljg4LDM4LjE4IEMgNjkuODgsMzguMTggMTAuNTMsMy43NCA1LjQsMjUuMTYgMC4yNyw0Ni41OCAtNS41LDYyLjg2IDEwLjMxLDY1Ljg3IDI2LjEyLDY4Ljg4IDY5Ljg4LDM4LjE4IDY5Ljg4LDM4LjE4IFoiLz4NCiAgICAgIDxwYXRoDQogICAgICAgICBzdHlsZT0iZmlsbDojNDI4OWM3Ig0KICAgICAgICAgZD0ibSA1OS42MiwzMyBjIDE3LC04LjggNTAuNjgsLTIzLjg4IDU0LjUzLC03LjkxIDUuMTgsMjEuNDkgMTEsMzcuODQgLTQuNzksNDAuOTEgLTExLjA4LDIuMTUgLTM2LC0xMi4zOCAtNDkuODIsLTIxLjIgLTAuMDIsLTEwLjQ0IDAuMSwtMS41MSAwLjA4LC0xMS44IHoiLz4NCiAgICA8L2c+DQogIDwvZz4NCjwvc3ZnPg0KDQo="
               />
             </a>
             <a
@@ -123,30 +123,28 @@ exports[`renders default snapshot 1`] = `
                   |
                 </i>
               </span>
-              <select
-                class="template-select"
-              >
-                <option
+              bound HTMLSelectElement {
+                "0": <option
                   value=""
                 >
                   &lt;Select template&gt;
-                </option>
-                <option
+                </option>,
+                "1": <option
                   value="default sample"
                 >
                   default sample
-                </option>
-                <option
+                </option>,
+                "2": <option
                   value="simple monolith"
                 >
                   simple monolith
-                </option>
-                <option
+                </option>,
+                "3": <option
                   value="simple microservice"
                 >
                   simple microservice
-                </option>
-              </select>
+                </option>,
+              }
             </div>
             <div
               class="tools-inner"
@@ -225,7 +223,6 @@ exports[`renders default snapshot 1`] = `
           />
           <div
             class="line-marker"
-            style=""
           />
           <div
             class="react-codemirror2 code-mirror-editor"
@@ -241,9 +238,8 @@ exports[`renders default snapshot 1`] = `
                   autocapitalize="off"
                   autocorrect="off"
                   spellcheck="false"
-                  style="position: absolute; bottom: -1em; padding: 0px; width: 1px; height: 1em; min-height: 1em; outline-color: none; outline-style: none; outline-width: initial;"
+                  style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; min-height: 1em; outline-color: none; outline-style: none; outline-width: initial;"
                   tabindex=""
-                  wrap="off"
                 />
               </div>
               <div
@@ -310,6 +306,7 @@ exports[`renders default snapshot 1`] = `
                           >
                             <span
                               role="presentation"
+                              style="padding-right: 0.1px;"
                             >
                               <span
                                 cm-text=""
@@ -354,7 +351,7 @@ exports[`renders default snapshot 1`] = `
           <span
             class="error-tooltip"
           >
-            canvas.getContext is not a function
+            Cannot set properties of null (setting 'font')
           </span>
           <div
             class="canvas-tools"
@@ -679,7 +676,7 @@ exports[`renders default snapshot 1`] = `
             <img
               alt="JHipster logo"
               class="jhi-logo"
-              src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+CjxzdmcKICAgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIgogICB3aWR0aD0iNDEuNjUwNTgxbW0iCiAgIGhlaWdodD0iMjIuNzM3MTQzbW0iCiAgIHZpZXdCb3g9IjAgMCA0MS42NTA1ODEgMjIuNzM3MTQ0Ij4KICA8ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSg5MS4xMjg4NjEsLTMxLjYzMTQyOCkiPgogICAgPGcgdHJhbnNmb3JtPSJtYXRyaXgoMC4yNjQ1ODMzMywwLDAsMC4yNjQ1ODMzMywtODYuMTI4NjUzLDMxLjg0OTM4KSI+CiAgICAgIDxwYXRoCiAgICAgICAgIHN0eWxlPSJmaWxsOiMzNDc0YWIiCiAgICAgICAgIGQ9Ik0gNjkuODgsMzguMTggQyA2OS44OCwzOC4xOCAxMC41MywzLjc0IDUuNCwyNS4xNiAwLjI3LDQ2LjU4IC01LjUsNjIuODYgMTAuMzEsNjUuODcgMjYuMTIsNjguODggNjkuODgsMzguMTggNjkuODgsMzguMTggWiIvPgogICAgICA8cGF0aAogICAgICAgICBzdHlsZT0iZmlsbDojNDI4OWM3IgogICAgICAgICBkPSJtIDU5LjYyLDMzIGMgMTcsLTguOCA1MC42OCwtMjMuODggNTQuNTMsLTcuOTEgNS4xOCwyMS40OSAxMSwzNy44NCAtNC43OSw0MC45MSAtMTEuMDgsMi4xNSAtMzYsLTEyLjM4IC00OS44MiwtMjEuMiAtMC4wMiwtMTAuNDQgMC4xLC0xLjUxIDAuMDgsLTExLjggeiIvPgogICAgPC9nPgogIDwvZz4KPC9zdmc+Cgo="
+              src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+DQo8c3ZnDQogICB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciDQogICB3aWR0aD0iNDEuNjUwNTgxbW0iDQogICBoZWlnaHQ9IjIyLjczNzE0M21tIg0KICAgdmlld0JveD0iMCAwIDQxLjY1MDU4MSAyMi43MzcxNDQiPg0KICA8ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSg5MS4xMjg4NjEsLTMxLjYzMTQyOCkiPg0KICAgIDxnIHRyYW5zZm9ybT0ibWF0cml4KDAuMjY0NTgzMzMsMCwwLDAuMjY0NTgzMzMsLTg2LjEyODY1MywzMS44NDkzOCkiPg0KICAgICAgPHBhdGgNCiAgICAgICAgIHN0eWxlPSJmaWxsOiMzNDc0YWIiDQogICAgICAgICBkPSJNIDY5Ljg4LDM4LjE4IEMgNjkuODgsMzguMTggMTAuNTMsMy43NCA1LjQsMjUuMTYgMC4yNyw0Ni41OCAtNS41LDYyLjg2IDEwLjMxLDY1Ljg3IDI2LjEyLDY4Ljg4IDY5Ljg4LDM4LjE4IDY5Ljg4LDM4LjE4IFoiLz4NCiAgICAgIDxwYXRoDQogICAgICAgICBzdHlsZT0iZmlsbDojNDI4OWM3Ig0KICAgICAgICAgZD0ibSA1OS42MiwzMyBjIDE3LC04LjggNTAuNjgsLTIzLjg4IDU0LjUzLC03LjkxIDUuMTgsMjEuNDkgMTEsMzcuODQgLTQuNzksNDAuOTEgLTExLjA4LDIuMTUgLTM2LC0xMi4zOCAtNDkuODIsLTIxLjIgLTAuMDIsLTEwLjQ0IDAuMSwtMS41MSAwLjA4LC0xMS44IHoiLz4NCiAgICA8L2c+DQogIDwvZz4NCjwvc3ZnPg0KDQo="
             />
           </a>
           <a
@@ -726,30 +723,28 @@ exports[`renders default snapshot 1`] = `
                 |
               </i>
             </span>
-            <select
-              class="template-select"
-            >
-              <option
+            bound HTMLSelectElement {
+              "0": <option
                 value=""
               >
                 &lt;Select template&gt;
-              </option>
-              <option
+              </option>,
+              "1": <option
                 value="default sample"
               >
                 default sample
-              </option>
-              <option
+              </option>,
+              "2": <option
                 value="simple monolith"
               >
                 simple monolith
-              </option>
-              <option
+              </option>,
+              "3": <option
                 value="simple microservice"
               >
                 simple microservice
-              </option>
-            </select>
+              </option>,
+            }
           </div>
           <div
             class="tools-inner"
@@ -828,7 +823,6 @@ exports[`renders default snapshot 1`] = `
         />
         <div
           class="line-marker"
-          style=""
         />
         <div
           class="react-codemirror2 code-mirror-editor"
@@ -844,9 +838,8 @@ exports[`renders default snapshot 1`] = `
                 autocapitalize="off"
                 autocorrect="off"
                 spellcheck="false"
-                style="position: absolute; bottom: -1em; padding: 0px; width: 1px; height: 1em; min-height: 1em; outline-color: none; outline-style: none; outline-width: initial;"
+                style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; min-height: 1em; outline-color: none; outline-style: none; outline-width: initial;"
                 tabindex=""
-                wrap="off"
               />
             </div>
             <div
@@ -913,6 +906,7 @@ exports[`renders default snapshot 1`] = `
                         >
                           <span
                             role="presentation"
+                            style="padding-right: 0.1px;"
                           >
                             <span
                               cm-text=""
@@ -957,7 +951,7 @@ exports[`renders default snapshot 1`] = `
         <span
           class="error-tooltip"
         >
-          canvas.getContext is not a function
+          Cannot set properties of null (setting 'font')
         </span>
         <div
           class="canvas-tools"

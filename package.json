@@ -43,10 +43,10 @@
   "scripts": {
     "start": "vite",
     "build": "tsc && vite build",
-    "test": "vitest watch",
+    "test": "npx vitest watch",
     "test:update-snapshot": "vitest -u",
-    "test:no-watch": "vitest run",
-    "test:coverage": "vitest run --coverage",
+    "test:no-watch": "npx vitest run",
+    "test:coverage": "npx vitest run --coverage",
     "serve": "vite preview",
     "deploy": "CI=true npm run test:no-watch && ./deploy.sh"
   },
