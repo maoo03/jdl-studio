@@ -36,7 +36,7 @@ jobs:
             npm run test:coverage
           fi
       - name: Verify coverage directory
-        if: ${{ github.ref != 'refs/heads/src' }}
+        if: github.ref != 'refs/heads/src'
         run: |
           if [ ! -d "coverage" ]; then
             echo "❌ Coverage directory not found!"
