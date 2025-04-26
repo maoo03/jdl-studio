@@ -85,7 +85,7 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: dist
-          path: ./  # Extract directly to root (important!)
+          path: dist/
   
       - name: Verify dist files
         run: ls -la dist/  # Verify files exist before building
