@@ -26,10 +26,9 @@ COPY package*.json ./
 RUN npm ci --only=production
 
 # Copy built files
-COPY dist/ ./dist/
-
+COPY dist /app/dist
 # Expose the app port
 EXPOSE 3000
 
 # Command to run the app
-CMD ["node", "dist/server.js"]
+CMD ["node", "app/dist/server.js"]
