@@ -47,7 +47,7 @@ jobs:
         if: always()
         with:
           name: coverage-report
-          path: coverage/
+          path: coverage/*
 
   build:
     name: Build project
