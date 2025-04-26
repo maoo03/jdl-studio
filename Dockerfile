@@ -11,8 +11,10 @@ RUN apk add --no-cache \
     jpeg-dev \
     pango-dev \
     cairo-dev \
-    giflib-dev \
-    && npm config set python /usr/bin/python3
+    giflib-dev
+
+# Set Python path for node-gyp
+ENV PYTHON=/usr/bin/python3
 
 # Set working directory
 WORKDIR /app
