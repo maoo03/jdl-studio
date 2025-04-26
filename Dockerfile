@@ -26,10 +26,7 @@ COPY package*.json ./
 RUN npm ci --only=production
 
 # Copy built files
-COPY --from=builder /app/dist ./dist/
-
-# Verify the files were copied correctly
-RUN ls -la dist/
+COPY dist/ ./dist/
 
 # Expose the app port
 EXPOSE 3000
