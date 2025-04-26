@@ -30,11 +30,11 @@ jobs:
       - name: Run coverage tests
         run: |
           mkdir -p coverage
+          # Step 1: Update snapshots (only on 'src' branch)
           if [ "$GITHUB_REF" == "refs/heads/src" ]; then
             npm run test:update-snapshot
-          else
+           fi
             npm run test:coverage
-          fi
       - name: Verify coverage directory
         if: github.ref != 'refs/heads/src'
         run: |
