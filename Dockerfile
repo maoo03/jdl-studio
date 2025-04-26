@@ -1,35 +1,26 @@
-# Use Node.js 18 Alpine as base
 FROM node:18-alpine
 
-# Install system dependencies for canvas and node-gyp
-RUN apk add --no-cache \
-    python3 \
-    make \
-    g++ \
-    libpng \
-    libpng-dev \
-    jpeg-dev \
-    pango-dev \
-    cairo-dev \
-    giflib-dev
+# Install system dependencies
+RUN apk add --no-cache python3 make g++
 
-# Set Python path for node-gyp
-ENV PYTHON=/usr/bin/python3
-
-# Set working directory
 WORKDIR /app
 
-# Copy package files
+# Copy package files first (for better layer caching)
 COPY package*.json ./
 
-# Install production dependencies
-RUN npm ci --only=production
+# Install dependencies
+RUN npm ci
 
-# Copy built files
-COPY dist/ ./dist/
+# Copy ALL files (except those in .dockerignore)
+COPY . .
 
-# Expose the app port
+# Build the project
+RUN npm run build
+
+# Verify the build output
+RUN ls -la dist/
+
 EXPOSE 3000
 
-# Command to run the app
+# Update this to match your actual entry file
 CMD ["node", "dist/server.js"]
