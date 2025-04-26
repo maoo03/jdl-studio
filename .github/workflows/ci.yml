@@ -93,10 +93,6 @@ jobs:
       - name: Build Docker image
         run: |
           docker build -t jdl-studio:latest .
-
-      # Optional: Save the image as a tarball for local transfer
-      - name: Export Docker image
-        run: |
           docker save -o jdl-studio.tar jdl-studio:latest
       
       - uses: actions/upload-artifact@v4
