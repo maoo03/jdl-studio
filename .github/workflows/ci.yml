@@ -30,11 +30,11 @@ jobs:
       - name: Run coverage tests
         run: |
           mkdir -p coverage
-          # Step 1: Update snapshots (only on 'src' branch)
           if [ "$GITHUB_REF" == "refs/heads/src" ]; then
             npm run test:update-snapshot
-           fi
-            npm run test:coverage
+          fi
+          npm run test:coverage
+      
       - name: Verify coverage directory
         if: github.ref != 'refs/heads/src'
         run: |
@@ -49,8 +49,8 @@ jobs:
           name: coverage-report
           path: coverage/*
 
-  build:
-    name: Build project
+  build-and-deploy:  # Combined job
+    name: Build and Deploy
     needs: install-and-test
     runs-on: ubuntu-latest
     if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master' || github.ref == 'refs/heads/src'
@@ -69,38 +69,19 @@ jobs:
       - name: Build project
         run: npm run build
       
-      - uses: actions/upload-artifact@v4
-        with:
-          name: dist
-          path: dist/
-
-  deploy:
-    name: Deploy to Docker (Local)
-    needs: build
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      
-      - name: Download build artifacts
-        uses: actions/download-artifact@v4
-        with:
-          name: dist
-          path: dist/
-  
       - name: Verify dist files
-        run: ls -la dist/  # Verify files exist before building
-  
+        run: ls -la dist/  # Debug: Ensure files exist
+      
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
-  
+      
       - name: Build Docker image
         run: |
           docker build -t jdl-studio:latest .
           docker save -o jdl-studio.tar jdl-studio:latest
       
       - name: Verify image contents
-        run: |
-          docker run --rm jdl-studio:latest ls -la /app/dist/
+        run: docker run --rm jdl-studio:latest ls -la /app/dist/
       
       - uses: actions/upload-artifact@v4
         with:
