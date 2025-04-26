@@ -1,5 +1,18 @@
-# Use Node.js 18 as the base image
+# Use Node.js 18 Alpine as base
 FROM node:18-alpine
+
+# Install system dependencies for canvas and node-gyp
+RUN apk add --no-cache \
+    python3 \
+    make \
+    g++ \
+    libpng \
+    libpng-dev \
+    jpeg-dev \
+    pango-dev \
+    cairo-dev \
+    giflib-dev \
+    && npm config set python /usr/bin/python3
 
 # Set working directory
 WORKDIR /app
@@ -7,14 +20,14 @@ WORKDIR /app
 # Copy package files
 COPY package*.json ./
 
-# Install dependencies
+# Install production dependencies
 RUN npm ci --only=production
 
-# Copy built files (from `npm run build`)
+# Copy built files
 COPY dist/ ./dist/
 
-# Expose the app port (e.g., 3000)
+# Expose the app port
 EXPOSE 3000
 
 # Command to run the app
-CMD ["node", "dist/server.js"]  # Adjust based on your entry file
+CMD ["node", "dist/server.js"]
