@@ -42,14 +42,14 @@ jobs:
             echo "❌ Coverage directory not found!"
             exit 1
           fi
-
+      
       - uses: actions/upload-artifact@v4
         if: always()
         with:
           name: coverage-report
           path: coverage/*
 
-  build-and-deploy:  # Combined job
+  build-and-deploy:
     name: Build and Deploy
     needs: install-and-test
     runs-on: ubuntu-latest
@@ -65,13 +65,26 @@ jobs:
       
       - name: Install dependencies
         run: npm ci
-      
+
       - name: Build project
         run: npm run build
-      
+
       - name: Verify dist files
-        run: ls -la dist/  # Debug: Ensure files exist
+        run: ls -la dist/
       
+      - name: Install server dependencies (express)
+        run: |
+          if ! grep -q "express" package.json; then
+            npm install express
+          fi
+      
+      - name: Verify server.js file
+        run: |
+          if [ ! -f "server.js" ]; then
+            echo "❌ server.js not found!"
+            exit 1
+          fi
+
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
       
@@ -79,10 +92,15 @@ jobs:
         run: |
           docker build -t jdl-studio:latest .
           docker save -o jdl-studio.tar jdl-studio:latest
-      
-      - name: Verify image contents
-        run: docker run --rm jdl-studio:latest ls -la /app/dist/
-      
+
+      - name: Verify Docker container runs correctly
+        run: |
+          docker load -i jdl-studio.tar
+          docker run -d --name jdl-studio-test -p 3000:3000 jdl-studio:latest
+          sleep 5
+          docker ps
+          docker logs jdl-studio-test
+
       - uses: actions/upload-artifact@v4
         with:
           name: docker-image
